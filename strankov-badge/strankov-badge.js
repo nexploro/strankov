@@ -6,13 +6,12 @@
 
   // --- Prevent Multiple Injections ---
   // If the badge element itself exists, exit to prevent duplicates.
-  // We'll inject styles only if they aren't already there.
   if (document.getElementById(badgeId)) {
+    console.log("Strankov badge already exists on the page.");
     return;
   }
 
-  // --- CSS Styles ---
-  // Using CSS classes and CSS variables for theming
+  // --- CSS Styles (Includes Dark Mode Adaptation) ---
   const styles = `
         :root { /* Default Light Mode Variables */
             --strankov-badge-font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -25,7 +24,7 @@
         }
 
         @media (prefers-color-scheme: dark) { /* Dark Mode Variable Overrides */
-            :root {
+            :root { /* Apply these to the root for global CSS variable scope */
                 --strankov-badge-bg: rgba(30, 41, 59, 0.75);       /* Dark Slate 800, slightly more opaque */
                 --strankov-badge-border-color: rgba(55, 65, 81, 0.6); /* Darker Slate border */
                 --strankov-badge-shadow: 0 2px 10px rgba(0,0,0,0.3);  /* Stronger shadow for dark bg */
@@ -91,6 +90,7 @@
     styleSheet.type = "text/css";
     styleSheet.innerText = styles; // or styleSheet.textContent for wider compatibility
     document.head.appendChild(styleSheet);
+    console.log("Strankov badge styles injected.");
   }
 
   // --- Create Badge HTML Elements ---
@@ -130,12 +130,18 @@
 
   // --- Append to Page ---
   // Wait for the DOM to be ready before appending to the body
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => {
+  function appendBadge() {
+    if (!document.getElementById(badgeId)) {
+      // Check again before appending
       document.body.appendChild(badgeContainer);
-    });
+      console.log("Strankov badge appended to body.");
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", appendBadge);
   } else {
     // DOM is already ready
-    document.body.appendChild(badgeContainer);
+    appendBadge();
   }
 })();
