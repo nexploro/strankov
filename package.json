@@ -1,0 +1,24 @@
+{
+  "name": "strankov-promo-badge",
+  "version": "1.0.0",
+  "description": "A dynamic promotional badge for Stránkov websites - Internal Use Only",
+  "main": "dist/badge.js",
+  "scripts": {
+    "build": "node tools/build.js",
+    "test": "open tests/test.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nexploro/strankov.git"
+  },
+  "keywords": [
+    "badge",
+    "promotional",
+    "tracking",
+    "utm",
+    "internal"
+  ],
+  "author": "Nexploro",
+  "license": "PRIVATE",
+  "private": true
+}
