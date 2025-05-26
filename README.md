@@ -1,12 +1,31 @@
-# Stránkov Promotional Badge - Internal Use Only
+# Stránkov Promotional Badge
 
-A dynamic, centrally-managed promotional badge for websites built by Nexploro/Stránkov.
+A lightweight promotional badge component for websites built by Stránkov.
 
-⚠️ **PRIVATE REPOSITORY** - For internal use only. Not for public distribution.
+⚠️ **AUTHORIZED USE ONLY** - This component is designed specifically for websites built by [Stránkov](https://strankov.cz) and is not intended for general public use.
 
-## 🚀 Quick Start (Internal Sites Only)
+## 🔒 Usage Authorization
 
-Add this script before the closing `</body>` tag on approved websites:
+This badge is exclusively licensed for use on:
+
+- ✅ Websites designed and built by Stránkov
+- ✅ Client projects with explicit authorization
+- ✅ Official Stránkov properties
+
+**Unauthorized use is not permitted and may violate licensing terms.**
+
+## 📋 Technical Information
+
+For authorized implementations, the badge provides:
+
+- Automatic UTM parameter tracking
+- Responsive design with glassmorphism styling
+- Lightweight footprint (<2KB)
+- Central update management
+
+## 🔧 Implementation
+
+Authorized developers can implement using:
 
 ```html
 <script>
