@@ -31,7 +31,8 @@ Authorized developers can implement using:
 <script>
   (function () {
     var s = document.createElement("script");
-    s.src = "https://cdn.jsdelivr.net/gh/nexploro/strankov@main/dist/badge.js";
+    s.src =
+      "https://cdn.jsdelivr.net/gh/nexploro/strankov@latest/dist/badge.js";
     s.async = true;
     document.head.appendChild(s);
   })();
